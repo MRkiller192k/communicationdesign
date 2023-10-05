@@ -6,6 +6,9 @@
     <title>Formula 1: Historical stats</title>
     <link href="storystyle.css" rel="stylesheet" media="all">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
     <header>
@@ -154,8 +157,46 @@
             <p>But, these were not the only changes from 2019.</p>
             <canvas id="comparison"></canvas>
         </div>
+        <div id="map"></div>
     </section>
         
+    <script>
+        // Oppsett av map 
+        const map = L.map('map').setView([51.0, 9.0], 5); // Startskordinater for Map 
+    
+        //Map layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+    
+        //Array for europeiske "race-locations"
+        const raceLocations = [
+        { name: 'Spain', lat: 41.3851, lon: 2.1734, date: 'June 21-23, 2024' },
+        { name: 'Monaco', lat: 43.7384, lon: 7.4246, date: 'May 24-26, 2024' },
+        { name: 'Austria', lat: 47.2196, lon: 14.7605, date: 'June 28-30, 2024' },
+        { name: 'United Kingdom', lat: 52.0780, lon: -1.0825, date: 'July 5-7, 2024' },
+        { name: 'Hungary', lat: 47.4979, lon: 19.0402, date: 'July 19-21, 2024' },
+        { name: 'Belgium', lat: 50.8614, lon: 5.3746, date: 'July 26-28, 2024' },
+        { name: 'Netherlands', lat: 52.3906, lon: 4.9384, date: 'August 23-25, 2024' },
+        { name: 'Italy', lat: 45.6155, lon: 9.2900, date: 'August 30 – September 1, 2024' },
+];
+
+    
+        // Race lokasjoner med ikoner og popups
+        raceLocations.forEach(function (location) {
+            const marker = L.marker([location.lat, location.lon], {
+                icon: L.icon({
+                    iconUrl: '15660129981676359699-128.png', //Ikon for lokasjoner
+                    iconSize: [35, 35], 
+                }),
+            }).addTo(map);
+    
+            // Selve popupen for sted og dato 
+            marker.bindPopup('<strong>' + location.name + '</strong><br>Race Date: ' + location.date);
+        });
+    </script>
+
+
     <script>
         const comparison = document.getElementById("comparison")
         //Dataset

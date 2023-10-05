@@ -101,3 +101,8 @@ header a {
     margin: 0 auto;
     display: block;
 }
+
+#map {
+    height: 400px;
+    width: 100%;
+}
