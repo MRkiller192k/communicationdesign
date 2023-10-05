@@ -149,7 +149,7 @@
             <div style="min-height:101px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/6eyV9/embed.js?v=1" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/6eyV9/full.png" alt="" /></noscript></div>
         </div>
         <div id="comparisonchart" class="scrollText">
-            <h2>Steal from the rich...</h2>
+            <h2>Top 10 Kings of the Formula1 </h2>
             <p>Comparing the numbers, we could argue that INP has "stolen" the votes Senterpartiet got in 2019. This means that Høyre now have more potenital partners and will probably be in government for the next four years.</p>
             <p>But, these were not the only changes from 2019.</p>
             <canvas id="comparison"></canvas>
@@ -161,83 +161,66 @@
         //Dataset
         const data = [
         {
-            Partyname: "Arbeiderpartiet",
+            Drivername: "Arbeiderpartiet",
             Abbreviation: "AP",
             Votes2019: "2603",
             Votes2023: "2982"
         },
         {
-            Partyname: "Fremskrittspartiet",
+            Drivername: "Fremskrittspartiet",
             Abbreviation: "FrP",
             Votes2019: "1034",
             Votes2023: "1030"
         },
         {
-            Partyname: "Høyre",
+            Drivername: "Høyre",
             Abbreviation: "H",
             Votes2019: "4141",
             Votes2023: "3997"
         },
         {
-            Partyname: "Kristelig Folkeparti",
+            Drivername: "Kristelig Folkeparti",
             Abbreviation: "KrF",
             Votes2019: "478",
             Votes2023: "510"
         },
         {
-            Partyname: "Miljøpartiet de Grønne",
+            Drivername: "Miljøpartiet de Grønne",
             Abbreviation: "MdG",
             Votes2019: "1058",
             Votes2023: "530"
         },
         {
-            Partyname: "Rødt",
+            Drivername: "Rødt",
             Abbreviation: "R",
             Votes2019: "1044",
             Votes2023: "802"
         },
         {
-            Partyname: "Senterpartiet",
+            Drivername: "Senterpartiet",
             Abbreviation: "Sp",
             Votes2019: "2037",
             Votes2023: "798"
         },
         {
-            Partyname: "Sosialistisk Venstreparti",
+            Drivername: "Sosialistisk Venstreparti",
             Abbreviation: "SV",
             Votes2019: "744",
             Votes2023: "672"
         },
         {
-            Partyname: "Venstre",
+            Drivername: "Venstre",
             Abbreviation: "V",
             Votes2019: "393",
             Votes2023: "190"
         },
         {
-            Partyname: "Pensjonistpartiet",
+            Drivername: "Pensjonistpartiet",
             Abbreviation: "Pp",
             Votes2019: "1206",
             Votes2023: "1438"
         },
-        {
-            Partyname: "Industri og Næringspartiet",
-            Abbreviation: "INP",
-            Votes2019: "0",
-            Votes2023: "1290"
-        },
-        {
-            Partyname: "Liberalistene",
-            Abbreviation: "Lib",
-            Votes2019: "0",
-            Votes2023: "51"
-        },
-        {
-            Partyname: "Norgesdemokratene",
-            Abbreviation: "ND",
-            Votes2019: "0",
-            Votes2023: "201"
-        }
+        
         ]
 
         //Create arrays with the necessary data, to make it available for JavaScript
